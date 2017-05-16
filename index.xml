@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ivan Yashchuk</title>
+    <link>http://nodejh.com/index.xml</link>
+    <description>Recent content on Ivan Yashchuk</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 06 May 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://nodejh.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Accepted to GSoC</title>
+      <link>http://nodejh.com/post/welcome-to-gsoc/</link>
+      <pubDate>Sat, 06 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://nodejh.com/post/welcome-to-gsoc/</guid>
+      <description>&lt;p&gt;Hello!&lt;/p&gt;
+
+&lt;p&gt;I was officially accepted to the Google Summer of Code 2017 program. Excited for working with FEniCS Project this summer as a GSoC student&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ru&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Really happy to announce our first ever &lt;a href=&#34;https://twitter.com/hashtag/GSOC2017?src=hash&#34;&gt;#GSOC2017&lt;/a&gt; students to work on &lt;a href=&#34;https://twitter.com/hashtag/FEniCS?src=hash&#34;&gt;#FEniCS&lt;/a&gt;: Ivan Yashchuk and Michal Habera. Thanks &lt;a href=&#34;https://twitter.com/gsoc&#34;&gt;@gsoc&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/NumFOCUS&#34;&gt;@NumFOCUS&lt;/a&gt;.&lt;/p&gt;&amp;mdash; FEniCS Project (@fenicsproject) &lt;a href=&#34;https://twitter.com/fenicsproject/status/860503927615311873&#34;&gt;5 мая 2017 г.&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
