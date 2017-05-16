@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Ivan Yashchuk</title>
-    <link>http://nodejh.com/post/index.xml</link>
+    <link>https://ivanyashchuk.github.io/post/index.xml</link>
     <description>Recent content in Posts on Ivan Yashchuk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 06 May 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://nodejh.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ivanyashchuk.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Accepted to GSoC</title>
-      <link>http://nodejh.com/post/welcome-to-gsoc/</link>
+      <link>https://ivanyashchuk.github.io/post/welcome-to-gsoc/</link>
       <pubDate>Sat, 06 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://nodejh.com/post/welcome-to-gsoc/</guid>
+      <guid>https://ivanyashchuk.github.io/post/welcome-to-gsoc/</guid>
       <description>&lt;p&gt;Hello!&lt;/p&gt;
 
 &lt;p&gt;I was officially accepted to the Google Summer of Code 2017 program. Excited for working with FEniCS Project this summer as a GSoC student&lt;/p&gt;
