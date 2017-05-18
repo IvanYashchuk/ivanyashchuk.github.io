@@ -6,8 +6,38 @@
     <description>Recent content on Ivan Yashchuk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 06 May 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 May 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://ivanyashchuk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Second meeting with my mentors</title>
+      <link>https://ivanyashchuk.github.io/post/second-meeting/</link>
+      <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanyashchuk.github.io/post/second-meeting/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Community bonding period&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Today I had another video meetings: first with Chris, then with Martin.
+We have discussed with Chris importance of communication, asking questions and recording my experience through the blog.
+Martin explained in details the structure of Uflacs (one of the key components in FEniCS).&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>First meeting with my mentors</title>
+      <link>https://ivanyashchuk.github.io/post/first-meeting/</link>
+      <pubDate>Thu, 11 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanyashchuk.github.io/post/first-meeting/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Community bonding period&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;On 9th of May I had a hangouts meeting with my mentors: Chris Richardson from Cambridge, Martin Alnæs from Oslo and Jack Hale from Luxembourg.
+We introduced ourselves to each other and discussed how I managed to find this program and why I chose FEniCS to work on (because I thought it certainly going to be a great experience :) ).
+There is a slack channel for FEniCS developers and we decided to have our written discussions there.&lt;/p&gt;
+
+&lt;p&gt;Also my mentors kindly invited me to attent the FEniCS 2017 Conference which will take place in Luxembourg in June. I am very grateful!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Accepted to GSoC</title>
