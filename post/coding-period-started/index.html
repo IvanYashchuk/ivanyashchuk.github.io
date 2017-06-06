@@ -7,7 +7,7 @@
 		<meta name="author" content="Ivan Yashchuk">
 		
 		<meta name="generator" content="Hugo 0.18.1" />
-		<title>First meeting with my mentors &middot; Ivan Yashchuk</title>
+		<title>Coding period started &middot; Ivan Yashchuk</title>
 		<link rel="shortcut icon" href="https://ivanyashchuk.github.io/images/favicon.ico">
 		<link rel="stylesheet" href="https://ivanyashchuk.github.io/css/style.css">
 		<link rel="stylesheet" href="https://ivanyashchuk.github.io/css/highlight.css">
@@ -43,11 +43,11 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-
             <article class="post">
                 <header>
                     <h1>
-                        First meeting with my mentors
+                        Coding period started
                     </h1>
                     <h2 class="headline">
-                    May 11, 2017 00:00
-                    · 105 words
+                    Jun 2, 2017 00:00
+                    · 149 words
                     · 1 minute read
                       <span class="tags">
                       
@@ -56,13 +56,23 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-
                 </header>
                 
                 <section id="post-body">
-                    <p><em>Community bonding period</em></p>
+                    <p><em>Coding period</em> has officially started on 30th of May!</p>
 
-<p>On 9th of May I had a hangouts meeting with my mentors: Chris Richardson from Cambridge, Martin Alnæs from Oslo and Jack Hale from Luxembourg.
-We introduced ourselves to each other and discussed how I managed to find this program and why I chose FEniCS to work on (because I thought it certainly going to be a great experience :) ).
-There is a slack channel for FEniCS developers and we decided to have our written discussions there.</p>
+<p>For the first week, my goal is to be able to solve $ \int_\Omega 1 \, d\Omega $ when $\Omega$, which is some domain in $\mathbb{R}^2$ or $\mathbb{R}^3$, consists of quadrilateral or hexahedral cells.
+This simple thing of computing the area (or volume) is one of the essential part to make Finite Element Method working. It gives the ratio between the reference (local) cell (which has predefined dimensions) and the
+arbitrary (global) cell.</p>
 
-<p>Also my mentors kindly invited me to attent the FEniCS 2017 Conference which will take place in Luxembourg in June. I am very grateful!</p>
+<p>In FEniCS $ \int_\Omega 1 \, d\Omega $ corresponds to the following python code snippet</p>
+
+<pre><code># Importing FEniCS components
+from fenics import *
+# Creating unit square domain devided into 1 x 1 cells
+mesh = UnitQuadMesh(mpi_comm_self(), 1, 1)
+# Assembling the expression
+assemble(1.0 * dx(mesh))
+</code></pre>
+
+<p>This should return the area (or volume) of the domain, which is $1.0$ in case of unit square or unit cube.</p>
 
                 </section>
             </article>

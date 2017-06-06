@@ -6,8 +6,34 @@
     <description>Recent content in Posts on Ivan Yashchuk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 16 May 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 02 Jun 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://ivanyashchuk.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Coding period started</title>
+      <link>https://ivanyashchuk.github.io/post/coding-period-started/</link>
+      <pubDate>Fri, 02 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanyashchuk.github.io/post/coding-period-started/</guid>
+      <description>&lt;p&gt;&lt;em&gt;Coding period&lt;/em&gt; has officially started on 30th of May!&lt;/p&gt;
+
+&lt;p&gt;For the first week, my goal is to be able to solve $ \int_\Omega 1 \, d\Omega $ when $\Omega$, which is some domain in $\mathbb{R}^2$ or $\mathbb{R}^3$, consists of quadrilateral or hexahedral cells.
+This simple thing of computing the area (or volume) is one of the essential part to make Finite Element Method working. It gives the ratio between the reference (local) cell (which has predefined dimensions) and the
+arbitrary (global) cell.&lt;/p&gt;
+
+&lt;p&gt;In FEniCS $ \int_\Omega 1 \, d\Omega $ corresponds to the following python code snippet&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;# Importing FEniCS components
+from fenics import *
+# Creating unit square domain devided into 1 x 1 cells
+mesh = UnitQuadMesh(mpi_comm_self(), 1, 1)
+# Assembling the expression
+assemble(1.0 * dx(mesh))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This should return the area (or volume) of the domain, which is $1.0$ in case of unit square or unit cube.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Second meeting with my mentors</title>
