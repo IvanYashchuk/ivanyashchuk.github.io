@@ -1,0 +1,108 @@
+    <!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Ivan Yashchuk">
+		
+		<meta name="generator" content="Hugo 0.18.1" />
+		<title>My project description / First nice plot! &middot; Ivan Yashchuk</title>
+		<link rel="shortcut icon" href="https://ivanyashchuk.github.io/images/favicon.ico">
+		<link rel="stylesheet" href="https://ivanyashchuk.github.io/css/style.css">
+		<link rel="stylesheet" href="https://ivanyashchuk.github.io/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="https://ivanyashchuk.github.io/css/font-awesome.min.css">
+		
+
+		
+	</head>
+<script type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://ivanyashchuk.github.io/'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://ivanyashchuk.github.io/post'>Archive</a>
+	<a href='https://ivanyashchuk.github.io/tags'>Tags</a>
+	<a href='https://ivanyashchuk.github.io/about'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>
+                        My project description / First nice plot!
+                    </h1>
+                    <h2 class="headline">
+                    Jun 10, 2017 00:00
+                    · 220 words
+                    · 2 minutes read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p><em>Coding period</em></p>
+
+<p>The project idea aims at being able to assemble and solve the simplest partial differential equation (PDE), a Poisson&rsquo;s equation $\Delta u = f $, in 2D (quadrilateral mesh) and 3D (hexahedral mesh) in FEniCS.</p>
+
+<p>One of the first steps in the Finite Element Method (FEM) is splitting the domain on which the PDE is solved into small parts, called cells, which in sum make a mesh.
+FEniCS has always supported meshes consisting of simplex cells (e.g. triangles and tetrahedrons), but has limited support for meshes consisting of quadrilateral (quad) and hexahedral (hex) cells.
+Finite element problems solved on quad/hex meshes often have better approximation properties and better robustness to cell distortion than those solved on simplex meshes.
+Example of the 2D triangular mesh of the unit square:
+<html>  <head>    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />    <meta name="generator" content="FEniCS/DOLFIN (http://fenicsproject.org)" />    <title>FEniCS/DOLFIN X3DOM plot</title>    <script type="text/javascript" src="https://www.x3dom.org/download/x3dom.js"></script>    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.js"></script>    <script type="text/javascript" src="https://rawgit.com/plscott/fenics-x3dom/master/x3dom_support.js"></script>    <link rel="stylesheet" type="text/css" href="https://www.x3dom.org/download/x3dom.css" />    <link rel="stylesheet" type="text/css" href="https://rawgit.com/plscott/fenics-x3dom/master/x3dom_support.css" />  </head>  <body>    <x3d showStat="false" xmlns="http://www.web3d.org/specifications/x3d-namespace" width="500.000000px" height="400.000000px">      <scene>        <shape>          <appearance>            <material diffuseColor="1.000000 1.000000 1.000000" emissiveColor="0.000000 0.000000 0.000000" specularColor="0.000000 0.000000 0.000000" ambientIntensity="0" shininess="0.5" transparency="0"></material>          </appearance>          <indexedFaceSet solid="false" colorPerVertex="false" coordIndex="0 4 1 -1 0 4 3 -1 1 5 2 -1 1 5 4 -1 3 7 4 -1 3 7 6 -1 4 8 5 -1 4 8 7 -1 ">            <coordinate point="0 0 0 0.5 0 0 1 0 0 0 0.5 0 0.5 0.5 0 1 0.5 0 0 1 0 0.5 1 0 1 1 0 "></coordinate>          </indexedFaceSet>        </shape>        <shape>          <appearance>            <material emissiveColor="0.000000 0.000000 0.000000" specularColor="0.000000 0.000000 0.000000" ambientIntensity="0" shininess="0.5" transparency="0"></material>          </appearance>          <indexedLineSet solid="false" colorPerVertex="false" coordIndex="0 1 -1 0 3 -1 0 4 -1 1 2 -1 1 4 -1 1 5 -1 2 5 -1 3 4 -1 3 6 -1 3 7 -1 4 5 -1 4 7 -1 4 8 -1 5 8 -1 6 7 -1 7 8 -1 ">            <coordinate point="0 0 0 0.5 0 0 1 0 0 0 0.5 0 0.5 0.5 0 1 0.5 0 0 1 0 0.5 1 0 1 1 0 "></coordinate>          </indexedLineSet>        </shape>        <viewpoint id="default" position="1.914214 1.914214 1.414214" orientation="-0.7071067812 0.7071067812 0 1" fieldOfView="0.785398" centerOfRotation="0.500000 0.500000 0.000000" zNear="-1" zFar="-1"></viewpoint>        <viewpoint id="top" position="0.500000 2.500000 0.000000" orientation="-1 0 0 1.5707963267948" fieldOfView="0.785398" centerOfRotation="0.500000 0.500000 0.000000" zNear="-1" zFar="-1"></viewpoint>        <viewpoint id="bottom" position="0.500000 -1.500000 0.000000" orientation="1 0 0 1.5707963267948" fieldOfView="0.785398" centerOfRotation="0.500000 0.500000 0.000000" zNear="-1" zFar="-1"></viewpoint>        <viewpoint id="left" position="2.500000 0.500000 0.000000" orientation="0 1 0 1.5707963267948" fieldOfView="0.785398" centerOfRotation="0.500000 0.500000 0.000000" zNear="-1" zFar="-1"></viewpoint>        <viewpoint id="right" position="-1.500000 0.500000 0.000000" orientation="0 -1 0 1.5707963267948" fieldOfView="0.785398" centerOfRotation="0.500000 0.500000 0.000000" zNear="-1" zFar="-1"></viewpoint>        <viewpoint id="back" position="0.500000 0.500000 -2.000000" orientation="0 1 0 3.1415926535898" fieldOfView="0.785398" centerOfRotation="0.500000 0.500000 0.000000" zNear="-1" zFar="-1"></viewpoint>        <viewpoint id="front" position="0.500000 0.500000 2.000000" orientation="0 0 0 1" fieldOfView="0.785398" centerOfRotation="0.500000 0.500000 0.000000" zNear="-1" zFar="-1"></viewpoint>        <background skyColor="0.950000 0.950000 0.950000"></background>        <directionalLight ambientIntensity="0" intensity="1"></directionalLight>      </scene>    </x3d>    <div id="menu"><form id="menu-items"><input type="radio" id="button-options" name="menu" checked="" />        <label for="button-options">Options</label>        <input type="radio" id="button-summary" name="menu" />        <label for="button-summary" style="display: none;">Summary</label>        <input type="radio" id="button-color" name="menu" />        <label for="button-color" style="display: none;">Color</label>        <input type="radio" id="button-warp" name="menu" />        <label for="button-warp" style="display: none;">Warp</label>        <input type="radio" id="button-viewpoints" name="menu" />        <label for="button-viewpoints" style="display: none;">Viewpoints</label>      </form>      <div id="menu-content"><div id="content-options" for="button-options"><span>Menu Options</span>          <br />          <form class="options"><input type="checkbox" id="select-summary" />            <label for="select-summary">Summary</label>          </form>          <br />          <form class="options"><input type="checkbox" id="select-color" />            <label for="select-color">Color</label>          </form>          <br />          <form class="options"><input type="checkbox" id="select-warp" />            <label for="select-warp">Warp</label>          </form>          <br />          <form class="options"><input type="checkbox" id="select-viewpoints" />            <label for="select-viewpoints">Viewpoints</label>          </form>        </div>        <div id="content-summary" for="button-summary" hidden="">Number of vertices: 9<br />Number of cells: 8</div>        <div id="content-color" for="button-color" hidden=""><form>            <input id="color-checkbox" type="checkbox" checked="" />            <label for="color-checkbox">Show Color</label>          </form>Current Color Map:<br />          <span id="min-color-value"></span>          <span id="color-map"></span>          <span id="max-color-value"></span>        </div>        <div id="content-warp" for="button-warp" hidden=""><form>            <input id="warp-checkbox" type="checkbox" />            <label for="warp-checkbox">Warp By Scalar</label>            <br />            <input id="warp-slider" type="range" min="0" max="5" step="0.01" value="1" disabled="" />            <br />            <label id="warp-slider-val" for="warp-slider">1</label>          </form>        </div>        <div id="content-viewpoints" for="button-viewpoints" hidden=""><span>Viewpoint Options</span>          <br />          <button class="viewpoint">front</button>          <button class="viewpoint">back</button>          <button class="viewpoint">left</button>          <br />          <button class="viewpoint">right</button>          <button class="viewpoint">top</button>          <button class="viewpoint">bottom</button>        </div>      </div>    </div>  </body></html></p>
+
+<p>So far I have managed to get the solution of the Poisson&rsquo;s equation (considering simple case $f=1$ and zero Dirichlet condition on one of the edges) on the unit square quadrilateral mesh.
+Next step to accomplish is interpolating and projecting a function into the function space associated with the quadrilateral mesh.</p>
+
+                </section>
+            </article>
+
+            
+
+            
+
+            
+
+            
+        </section>
+
+        <script src="https://ivanyashchuk.github.io/js/jquery-2.2.4.min.js"></script>
+<script src="https://ivanyashchuk.github.io/js/main.js"></script>
+<script src="https://ivanyashchuk.github.io/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+  
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-99223551-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+
+
+
+    </body>
+</html>
