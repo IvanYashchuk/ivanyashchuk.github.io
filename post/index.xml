@@ -6,8 +6,31 @@
     <description>Recent content in Posts on Ivan Yashchuk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 10 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Jun 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://ivanyashchuk.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>I attended FEniCS&#39;17!</title>
+      <link>https://ivanyashchuk.github.io/post/fenics-conference/</link>
+      <pubDate>Sun, 18 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanyashchuk.github.io/post/fenics-conference/</guid>
+      <description>&lt;p&gt;This week I was at the FEniCS Conference at University of Luxembourg. I got a chance to meet my mentors personally and other members of the FEniCS community as well.&lt;/p&gt;
+
+&lt;p&gt;There were a lot of interesting people and a lot of interesting talks from a diverse range of scientific areas: Software and Algorithms, Magnetics, Optimisation, Biomechanics, Visualisation and Large Scale Computing, Solid and Fluid Mechanics.&lt;/p&gt;
+
+&lt;p&gt;Thanks to my mentors Chris, Jack and Martin for inviting me there!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://lh3.googleusercontent.com/O2oF4gDRXaDMk42suPJ3Gjyn_HQ_5gFrjjyU5ZSyaQojmqckH8A5AzqxpH4oZjGCJf1nuHJuxrdTjyOXbjvHjmTcOAj0uZeKsfHQUy7FyJQY6dkZA7rIOOUXtLX8v0Y2PwF31Q-ydgY8ZsxRfCjSN3YIOlRey6K_s1bDOqH1IkvXqk6ui2BX3clK7qNPrNDgk0a-KRgW50Lx5o69Z9Et49k8qkkNoM32MLiSoC9FrYvHeOFADnAe1VDvRZ6ZebQ1iaFeldXTKifcC0M6mr5geqE39fd6ce3miFuFDj_fm7K_97bBSIuYwyzN1cm4E8ySjgo9edRduzwRGkKzhfWCw2UF2CaY84iM4UUizg1nNF-tEeIh9nrAcHj7l4KQhpT2OpGwolTd7UnKUjbhY3Mcyex4DQQOLpjby_P7w0WGARW6CJStlbcYrDvzhdJ4V-j4WQs6TdyKUL_G9BlpyY3Jb-f7-Sn85O7owsJ4Gt6fCbIzA_DlXdqpdRGxZFrhpEg3MGR--c7fCtrDvE_MCIhlQtuWcxde2zqP-5ctIQaw_WjiLg43mL7HXRbKpXj0JPXCORaNqRZVTjyQqvv7fWQb4IBn3AgG3E-z3iUhDbqhojj3RzJM62_nSw=w1059-h794-no&#34;&gt;
+&lt;em&gt;Guided walk through Luxembourg&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://lh3.googleusercontent.com/lD2jJoEdyUOn6POwQf970uoxendhz0y7lNpS71zaMLBo130GIVZYoH3XgJIKeeNk-EjEn3hWioJvDhKbi7_jEJgegGvAa-GdOYSCj5Ooen55KV7T6bcD4eN4DbBPbT7pTOOtwESH6Nbvy5NsvYWp1gkmM2gqxjTEBHOXsyGSxhoGFwxPm-0p-7V4E9zmMo9zuRCOc4aW8uzlg25btjcKlp8LCx2XqkJ-JbQ5GdKYXDAuhGVoP7WUwEvUZqvgfuZVSuwC2mFGP-k0_khGPJAmKivmvOeDfMCf478rasY6VyiYF-0iOnE1WjSiU7pH4bsFradearC4l21sQ_8--siuteBIn7fAJiQNq4jVmhi6R4Io5Sy9LqU76WEDzoAK6ZCdS0mwygYGyw7RKmaE5OT8VmUK10AVkXuK8NmdTRdJebHwboMMaYD_tDWwvngJepx_PZKRqpIgJLdXh11gfGTmCQ-aGtTIn2yZfMBm7OGPkT0-palnKaqo7SVXkyDVKditFo4HGBXuzempmirkp73RmqoyZfav9r336bhnm9wQPH5Ym6H8WiFU8RNaUDHEQxgYcNqKz_cYmcK4LCkIxWl2blAv1AOGUnpgPxF5H50pmxLzT3pjrM-w8Q=w1059-h794-no&#34;&gt;
+&lt;em&gt;Carl Lundholm from Chalmers is preparing to solve Poisson&amp;rsquo;s equation with Microsoft Hololens&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://files.slack.com/files-pri/T1AFBGYP2-F5SB52WJC/dsc_0208.jpg&#34;&gt;
+&lt;em&gt;Some discussions from a parallel GSoC project about XDMF&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>My project description / First nice plot!</title>
