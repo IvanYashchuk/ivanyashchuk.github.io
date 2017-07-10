@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ivanyashchuk.github.io/post/first-evaluation/</loc>
+    <lastmod>2017-07-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ivanyashchuk.github.io/post/dirichlet-bc/</loc>
+    <lastmod>2017-06-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ivanyashchuk.github.io/post/fenics-conference/</loc>
     <lastmod>2017-06-18T00:00:00+00:00</lastmod>
   </url>
@@ -43,13 +53,13 @@
   
   <url>
     <loc>https://ivanyashchuk.github.io/</loc>
-    <lastmod>2017-06-18T00:00:00+00:00</lastmod>
+    <lastmod>2017-07-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ivanyashchuk.github.io/post/</loc>
-    <lastmod>2017-06-18T00:00:00+00:00</lastmod>
+    <lastmod>2017-07-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

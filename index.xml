@@ -6,8 +6,48 @@
     <description>Recent content on Ivan Yashchuk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 18 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 02 Jul 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://ivanyashchuk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>First evaluation is passed!</title>
+      <link>https://ivanyashchuk.github.io/post/first-evaluation/</link>
+      <pubDate>Sun, 02 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanyashchuk.github.io/post/first-evaluation/</guid>
+      <description>&lt;p&gt;This week was the first evaluation week, which I passed successfully!
+So far I&amp;rsquo;ve got a basic working implementation for solving Poisson&amp;rsquo;s equation in 2D.
+There are lots of things to improve and develop still, but it was a good start.&lt;/p&gt;
+
+&lt;p&gt;Plan for the future:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Move changes from FFC into one class in FIAT.&lt;/li&gt;
+&lt;li&gt;Deal with element entity (vertices and facets) ordering issue (this will fix the DirichletBC issue).&lt;/li&gt;
+&lt;li&gt;More unit tests are required.&lt;/li&gt;
+&lt;li&gt;Documented demo.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About Dicrichlet boundary conditions</title>
+      <link>https://ivanyashchuk.github.io/post/dirichlet-bc/</link>
+      <pubDate>Sun, 25 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanyashchuk.github.io/post/dirichlet-bc/</guid>
+      <description>&lt;p&gt;Almost all simple problems using Finite Element Method goes down to solving $ \boldsymbol{A} x = \boldsymbol{b} $, where $\boldsymbol{A}$ is the so called stiffness matrix and $\boldsymbol{b}$ is the load vector.
+The solution to the problem is not unique untill some boundary condition is specified. The simplest one is the Dirichlet boundary condition.
+It specifies the values that a solution needs to take on along the boundary of the domain.
+In FEniCS it can be easily specified with &lt;code&gt;DicrichletBC&lt;/code&gt; class:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;bc = DicrichletBC(FunctionSpace, Value, SubDomain)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The problem is that currently using this line of code sets the boundary value to the wrong places in the domain. Most probably the problem is in the identification of boundary faces of the mesh.
+There is probably an assumption that mesh in 2D can be composed out of triangles only and in 3D - tetrahedrons. This should be modified to get the &lt;code&gt;DicrichletBC&lt;/code&gt; to work correctly.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>I attended FEniCS&#39;17!</title>
@@ -21,13 +61,13 @@
 
 &lt;p&gt;Thanks to my mentors Chris, Jack and Martin for inviting me there!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://lh3.googleusercontent.com/O2oF4gDRXaDMk42suPJ3Gjyn_HQ_5gFrjjyU5ZSyaQojmqckH8A5AzqxpH4oZjGCJf1nuHJuxrdTjyOXbjvHjmTcOAj0uZeKsfHQUy7FyJQY6dkZA7rIOOUXtLX8v0Y2PwF31Q-ydgY8ZsxRfCjSN3YIOlRey6K_s1bDOqH1IkvXqk6ui2BX3clK7qNPrNDgk0a-KRgW50Lx5o69Z9Et49k8qkkNoM32MLiSoC9FrYvHeOFADnAe1VDvRZ6ZebQ1iaFeldXTKifcC0M6mr5geqE39fd6ce3miFuFDj_fm7K_97bBSIuYwyzN1cm4E8ySjgo9edRduzwRGkKzhfWCw2UF2CaY84iM4UUizg1nNF-tEeIh9nrAcHj7l4KQhpT2OpGwolTd7UnKUjbhY3Mcyex4DQQOLpjby_P7w0WGARW6CJStlbcYrDvzhdJ4V-j4WQs6TdyKUL_G9BlpyY3Jb-f7-Sn85O7owsJ4Gt6fCbIzA_DlXdqpdRGxZFrhpEg3MGR--c7fCtrDvE_MCIhlQtuWcxde2zqP-5ctIQaw_WjiLg43mL7HXRbKpXj0JPXCORaNqRZVTjyQqvv7fWQb4IBn3AgG3E-z3iUhDbqhojj3RzJM62_nSw=w1059-h794-no&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh3.googleusercontent.com/1N50uR3RaXy6vqPucpry43vlycvE0BrC9WmoryxvcFtc4tf9GZdw1Jju6Ey8XX9E5_PXdHFy6YOqJssEZ89sTfqlIpvBmPjwtfEVf3tc1bTATHKFLuRcQbO88zBa17F59AQZt2Y=w1059-h794-no&#34;&gt;
 &lt;em&gt;Guided walk through Luxembourg&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://lh3.googleusercontent.com/lD2jJoEdyUOn6POwQf970uoxendhz0y7lNpS71zaMLBo130GIVZYoH3XgJIKeeNk-EjEn3hWioJvDhKbi7_jEJgegGvAa-GdOYSCj5Ooen55KV7T6bcD4eN4DbBPbT7pTOOtwESH6Nbvy5NsvYWp1gkmM2gqxjTEBHOXsyGSxhoGFwxPm-0p-7V4E9zmMo9zuRCOc4aW8uzlg25btjcKlp8LCx2XqkJ-JbQ5GdKYXDAuhGVoP7WUwEvUZqvgfuZVSuwC2mFGP-k0_khGPJAmKivmvOeDfMCf478rasY6VyiYF-0iOnE1WjSiU7pH4bsFradearC4l21sQ_8--siuteBIn7fAJiQNq4jVmhi6R4Io5Sy9LqU76WEDzoAK6ZCdS0mwygYGyw7RKmaE5OT8VmUK10AVkXuK8NmdTRdJebHwboMMaYD_tDWwvngJepx_PZKRqpIgJLdXh11gfGTmCQ-aGtTIn2yZfMBm7OGPkT0-palnKaqo7SVXkyDVKditFo4HGBXuzempmirkp73RmqoyZfav9r336bhnm9wQPH5Ym6H8WiFU8RNaUDHEQxgYcNqKz_cYmcK4LCkIxWl2blAv1AOGUnpgPxF5H50pmxLzT3pjrM-w8Q=w1059-h794-no&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;https://lh3.googleusercontent.com/s7pfIX46hJWGLfaPFl7fSDakH065hn7i3p8lCgx_UTdA7_viVMYl-_UW7CUW-z4tQOyiF3cg4tdD6jXuxLmfONF1-6MKg1xrYxoHFBs1Y4KjgfMIiRKaMBHTo99Ux1qNBPfrxXo=w1059-h794-no&#34;&gt;
 &lt;em&gt;Carl Lundholm from Chalmers is preparing to solve Poisson&amp;rsquo;s equation with Microsoft Hololens&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;https://files.slack.com/files-pri/T1AFBGYP2-F5SB52WJC/dsc_0208.jpg&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;https://files.slack.com/files-pri/T1AFBGYP2-F5SB52WJC/dsc_0208.jpg?pub_secret=1c23ce20bd&#34;&gt;
 &lt;em&gt;Some discussions from a parallel GSoC project about XDMF&lt;/em&gt;&lt;/p&gt;
 </description>
     </item>
