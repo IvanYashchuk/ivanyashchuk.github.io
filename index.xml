@@ -6,8 +6,84 @@
     <description>Recent content on Ivan Yashchuk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 02 Jul 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 12 Jul 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://ivanyashchuk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>About numbering of mesh entities</title>
+      <link>https://ivanyashchuk.github.io/post/numbering-of-mesh-entities/</link>
+      <pubDate>Wed, 12 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanyashchuk.github.io/post/numbering-of-mesh-entities/</guid>
+      <description>&lt;p&gt;The topological entities of a cell (or mesh) are referred to as mesh entities.
+A mesh entity can be identified by a pair $(d, i)$, where $d$ is the topological
+dimension of the mesh entity and $i$ is a unique index of the mesh entity. Mesh
+entities are numbered within each topological dimension from $0$ to $n_d − 1$,
+where $n_d$ is the number of mesh entities of topological dimension $d$.
+Mesh entity numbering should be the same across all software components (FIAT, FFC, DOLFIN).&lt;/p&gt;
+
+&lt;p&gt;Quadrilateral and hexahedron cells are constructed as &lt;code&gt;FIAT.reference_element.TensorProductCell&lt;/code&gt; of interval cells.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from fenics import *
+from ffc.fiatinterface import create_element
+# Create UFL&#39;s P1 Finite Element on interval
+ufl_interval = FiniteElement(&amp;quot;P&amp;quot;, interval, 1)
+
+# Create FIAT&#39;s Finite Element on interval
+fiat_interval = create_element(ufl_interval)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now &lt;code&gt;fiat_interval&lt;/code&gt; is instance of &lt;code&gt;FIAT.Lagrange&lt;/code&gt; on reference element &lt;code&gt;UFCInterval&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;In [..]: fiat_interval.get_reference_element()
+Out[..]: &amp;lt;FIAT.reference_element.UFCInterval at 0x7fdb4aa72da0&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The topological entities of a cell can accessed with &lt;code&gt;reference_element.get_topology()&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;In [..]: fiat_interval.ref_el.get_topology()
+Out[..]: {0: {0: (0,), 1: (1,)}, 1: {0: (0, 1)}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Topology of a cell is stored as dict of dicts, mesh entity identified by a pair $(d, i)$ can accessed by index &lt;code&gt;[d][i]&lt;/code&gt;.
+Entities of topological dimension 0 here are vertices, entities of dimension 1 (codimension zero) is the cell itself.&lt;/p&gt;
+
+&lt;p&gt;Quadrilateral is &lt;code&gt;TensorProductCell(UFCInterval(), UFCInterval())&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from FIAT.reference_element import TensorProductCell, UFCInterval
+quad_cell = TensorProductCell(UFCInterval(), UFCInterval())
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;In [..]: quad_cell.get_topology()
+Out[..]:
+{(0, 0): {0: (0,), 1: (1,), 2: (2,), 3: (3,)},
+ (0, 1): {0: (0, 1), 1: (2, 3)},
+ (1, 0): {0: (0, 2), 1: (1, 3)},
+ (1, 1): {0: (0, 1, 2, 3)}}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now topological dimension is stored as the tuple of dimensions in different &amp;ldquo;directions&amp;rdquo;, it comes from the tensor product operation.
+The topological dimension $d$ is the sum of the elements in the tuple.
+It is useful to store the dimension as a tuple if interval elements of different order are used in different directions. Usually the order is the same.&lt;/p&gt;
+
+&lt;p&gt;It is more practical to store the dimension as an integer. Therefore new FIAT&amp;rsquo;s reference cell were introduced &lt;code&gt;UFCQuadrilateral&lt;/code&gt; and &lt;code&gt;UFCHexahedron&lt;/code&gt;.
+The entity dimensions of these new elements are &amp;ldquo;flattened&amp;rdquo; to normal elements.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from FIAT.reference_element import UFCQuadrilateral
+quad_cell = UFCQuadrilateral()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In [..]: quad_cell.get_topology()
+Out[..]:
+{0: {0: (0,), 1: (1,), 2: (2,), 3: (3,)},
+ 1: {0: (0, 1), 1: (2, 3), 2: (0, 2), 3: (1, 3)},
+ 2: {0: (0, 1, 2, 3)}}
+ ``&lt;code&gt;
+ The tensor product cell can be accessed if needed by&lt;/code&gt;quad_cell.product`.&lt;/p&gt;
+
+&lt;p&gt;Mesh entity description for quadrilateral and hexahedron mesh in FFC and DOLFIN was modified to have the same topology as FIAT&amp;rsquo;s flattened &lt;code&gt;UFCQuadrilateral&lt;/code&gt; and &lt;code&gt;UFCHexahedron&lt;/code&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>First evaluation is passed!</title>

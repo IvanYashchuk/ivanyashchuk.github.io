@@ -1,0 +1,163 @@
+    <!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Ivan Yashchuk">
+		
+		<meta name="generator" content="Hugo 0.18.1" />
+		<title>About numbering of mesh entities &middot; Ivan Yashchuk</title>
+		<link rel="shortcut icon" href="https://ivanyashchuk.github.io/images/favicon.ico">
+		<link rel="stylesheet" href="https://ivanyashchuk.github.io/css/style.css">
+		<link rel="stylesheet" href="https://ivanyashchuk.github.io/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="https://ivanyashchuk.github.io/css/font-awesome.min.css">
+		
+
+		
+	</head>
+<script type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://ivanyashchuk.github.io/'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://ivanyashchuk.github.io/post'>Archive</a>
+	<a href='https://ivanyashchuk.github.io/tags'>Tags</a>
+	<a href='https://ivanyashchuk.github.io/about'>About</a>
+
+	
+
+	
+</nav>
+
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>
+                        About numbering of mesh entities
+                    </h1>
+                    <h2 class="headline">
+                    Jul 12, 2017 00:00
+                    · 426 words
+                    · 2 minutes read
+                      <span class="tags">
+                      
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p>The topological entities of a cell (or mesh) are referred to as mesh entities.
+A mesh entity can be identified by a pair $(d, i)$, where $d$ is the topological
+dimension of the mesh entity and $i$ is a unique index of the mesh entity. Mesh
+entities are numbered within each topological dimension from $0$ to $n_d − 1$,
+where $n_d$ is the number of mesh entities of topological dimension $d$.
+Mesh entity numbering should be the same across all software components (FIAT, FFC, DOLFIN).</p>
+
+<p>Quadrilateral and hexahedron cells are constructed as <code>FIAT.reference_element.TensorProductCell</code> of interval cells.</p>
+
+<pre><code>from fenics import *
+from ffc.fiatinterface import create_element
+# Create UFL's P1 Finite Element on interval
+ufl_interval = FiniteElement(&quot;P&quot;, interval, 1)
+
+# Create FIAT's Finite Element on interval
+fiat_interval = create_element(ufl_interval)
+</code></pre>
+
+<p>Now <code>fiat_interval</code> is instance of <code>FIAT.Lagrange</code> on reference element <code>UFCInterval</code></p>
+
+<pre><code>In [..]: fiat_interval.get_reference_element()
+Out[..]: &lt;FIAT.reference_element.UFCInterval at 0x7fdb4aa72da0&gt;
+</code></pre>
+
+<p>The topological entities of a cell can accessed with <code>reference_element.get_topology()</code></p>
+
+<pre><code>In [..]: fiat_interval.ref_el.get_topology()
+Out[..]: {0: {0: (0,), 1: (1,)}, 1: {0: (0, 1)}}
+</code></pre>
+
+<p>Topology of a cell is stored as dict of dicts, mesh entity identified by a pair $(d, i)$ can accessed by index <code>[d][i]</code>.
+Entities of topological dimension 0 here are vertices, entities of dimension 1 (codimension zero) is the cell itself.</p>
+
+<p>Quadrilateral is <code>TensorProductCell(UFCInterval(), UFCInterval())</code></p>
+
+<pre><code>from FIAT.reference_element import TensorProductCell, UFCInterval
+quad_cell = TensorProductCell(UFCInterval(), UFCInterval())
+</code></pre>
+
+<pre><code>In [..]: quad_cell.get_topology()
+Out[..]:
+{(0, 0): {0: (0,), 1: (1,), 2: (2,), 3: (3,)},
+ (0, 1): {0: (0, 1), 1: (2, 3)},
+ (1, 0): {0: (0, 2), 1: (1, 3)},
+ (1, 1): {0: (0, 1, 2, 3)}}
+</code></pre>
+
+<p>Now topological dimension is stored as the tuple of dimensions in different &ldquo;directions&rdquo;, it comes from the tensor product operation.
+The topological dimension $d$ is the sum of the elements in the tuple.
+It is useful to store the dimension as a tuple if interval elements of different order are used in different directions. Usually the order is the same.</p>
+
+<p>It is more practical to store the dimension as an integer. Therefore new FIAT&rsquo;s reference cell were introduced <code>UFCQuadrilateral</code> and <code>UFCHexahedron</code>.
+The entity dimensions of these new elements are &ldquo;flattened&rdquo; to normal elements.</p>
+
+<pre><code>from FIAT.reference_element import UFCQuadrilateral
+quad_cell = UFCQuadrilateral()
+</code></pre>
+
+<p>In [..]: quad_cell.get_topology()
+Out[..]:
+{0: {0: (0,), 1: (1,), 2: (2,), 3: (3,)},
+ 1: {0: (0, 1), 1: (2, 3), 2: (0, 2), 3: (1, 3)},
+ 2: {0: (0, 1, 2, 3)}}
+ ``<code>
+ The tensor product cell can be accessed if needed by</code>quad_cell.product`.</p>
+
+<p>Mesh entity description for quadrilateral and hexahedron mesh in FFC and DOLFIN was modified to have the same topology as FIAT&rsquo;s flattened <code>UFCQuadrilateral</code> and <code>UFCHexahedron</code>.</p>
+
+                </section>
+            </article>
+
+            
+
+            
+
+            
+
+            
+        </section>
+
+        <script src="https://ivanyashchuk.github.io/js/jquery-2.2.4.min.js"></script>
+<script src="https://ivanyashchuk.github.io/js/main.js"></script>
+<script src="https://ivanyashchuk.github.io/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+  
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-99223551-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+
+
+
+
+    </body>
+</html>
