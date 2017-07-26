@@ -6,8 +6,50 @@
     <description>Recent content on Ivan Yashchuk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 12 Jul 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Jul 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://ivanyashchuk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Meet new class for FIAT!</title>
+      <link>https://ivanyashchuk.github.io/post/meet-new-class-for-FIAT/</link>
+      <pubDate>Fri, 21 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanyashchuk.github.io/post/meet-new-class-for-FIAT/</guid>
+      <description>&lt;p&gt;FIAT (FInite element Automatic Tabulator) is a Python package for
+defining and evaluating a wide range of different finite element basis
+functions for numerical partial differential equations.&lt;/p&gt;
+
+&lt;p&gt;FIAT uses a object-oriented infrastructure to define
+finite elements.  For example, the &lt;code&gt;Lagrange&lt;/code&gt; module contains a class
+&lt;code&gt;Lagrange&lt;/code&gt; modeling the Lagrange finite element family.  This
+class is a subclass of some &lt;code&gt;FiniteElement&lt;/code&gt; class contained in
+another module.&lt;/p&gt;
+
+&lt;p&gt;FIAT has &lt;code&gt;TensorProductElement&lt;/code&gt; class to define products of other elements.
+Lagrangian finite element defined on a quadrilateral cell is a tensor product of two Lagrange elements defined on intervals.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;from FIAT.tensor_product import TensorProductElement
+from FIAT.lagrange import Lagrange
+from FIAT.reference_element import UFCInterval as interval
+quadrilateral_element = TensorProductElement(Lagrange(interval()), Lagrange(interval()))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;However, as discussed in the previous post this element has tuple structure for dimensions as it is defined on a &lt;code&gt;TensorProductCell&lt;/code&gt;
+Therefore it needs to be changed so that it is defined on new &lt;code&gt;UFCHexahedron&lt;/code&gt; and &lt;code&gt;UFCQuadrilateral&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Newly implemented wrapper class &lt;code&gt;FlattenedDimensions&lt;/code&gt; does that.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;from FIAT.tensor_product import TensorProductElement, FlattenedDimensions
+from FIAT.lagrange import Lagrange
+from FIAT.reference_element import UFCInterval as interval
+quadrilateral_element = FlattenedDimensions(TensorProductElement(Lagrange(interval()), Lagrange(interval())))
+```&lt;/p&gt;
+
+&lt;p&gt;Now &lt;code&gt;quadrilateral_element&lt;/code&gt; is defined on UFCQuadrilateral and can be easily used by FFC to generate C++ code for assembling matrices.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>About numbering of mesh entities</title>
@@ -73,13 +115,14 @@ The entity dimensions of these new elements are &amp;ldquo;flattened&amp;rdquo; 
 quad_cell = UFCQuadrilateral()
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;In [..]: quad_cell.get_topology()
+&lt;pre&gt;&lt;code&gt;In [..]: quad_cell.get_topology()
 Out[..]:
 {0: {0: (0,), 1: (1,), 2: (2,), 3: (3,)},
  1: {0: (0, 1), 1: (2, 3), 2: (0, 2), 3: (1, 3)},
  2: {0: (0, 1, 2, 3)}}
- ``&lt;code&gt;
- The tensor product cell can be accessed if needed by&lt;/code&gt;quad_cell.product`.&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The tensor product cell can be accessed if needed by &lt;code&gt;quad_cell.product&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Mesh entity description for quadrilateral and hexahedron mesh in FFC and DOLFIN was modified to have the same topology as FIAT&amp;rsquo;s flattened &lt;code&gt;UFCQuadrilateral&lt;/code&gt; and &lt;code&gt;UFCHexahedron&lt;/code&gt;.&lt;/p&gt;
 </description>
