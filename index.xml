@@ -22,7 +22,7 @@ Now it is needed to see how well it performs.&lt;/p&gt;
 I&amp;rsquo;ve adapted Chris&amp;rsquo;s demo &lt;a href=&#34;https://bitbucket.org/chris_richardson/weak-scaling-demo&#34;&gt;https://bitbucket.org/chris_richardson/weak-scaling-demo&lt;/a&gt; for hex mesh.&lt;/p&gt;
 
 &lt;p&gt;Here are the results:
-&lt;img src=&#34;https://lh5.googleusercontent.com/fhL9TRftKpKNOtv1pRDgS5tvA2Hem8vfeK7Qaxkj5m0-Jxgy-ZdULHln_x8I3q9Bcd-q9kMN&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;https://image.ibb.co/mCw0xF/newplot.png&#34;&gt;&lt;/p&gt;
 
 &lt;p&gt;It is seen from the plot that assembly and defining function space takes roughly the same time when increasing number of processes.
 For solving &lt;code&gt;hypre-amg&lt;/code&gt; was used and the results show that hex solution does not scale that well. The reasons are still need to be discovered.&lt;/p&gt;
