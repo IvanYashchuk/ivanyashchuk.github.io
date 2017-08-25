@@ -7,7 +7,7 @@
 		<meta name="author" content="Ivan Yashchuk">
 		
 		<meta name="generator" content="Hugo 0.18.1" />
-		<title>Meet new class for FIAT! &middot; Ivan Yashchuk</title>
+		<title>New old demos &middot; Ivan Yashchuk</title>
 		<link rel="shortcut icon" href="https://ivanyashchuk.github.io/images/favicon.ico">
 		<link rel="stylesheet" href="https://ivanyashchuk.github.io/css/style.css">
 		<link rel="stylesheet" href="https://ivanyashchuk.github.io/css/highlight.css">
@@ -43,11 +43,11 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-
             <article class="post">
                 <header>
                     <h1>
-                        Meet new class for FIAT!
+                        New old demos
                     </h1>
                     <h2 class="headline">
-                    Jul 21, 2017 00:00
-                    · 194 words
+                    Aug 17, 2017 00:00
+                    · 113 words
                     · 1 minute read
                       <span class="tags">
                       
@@ -56,37 +56,29 @@ src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-
                 </header>
                 
                 <section id="post-body">
-                    <p>FIAT (FInite element Automatic Tabulator) is a Python package for
-defining and evaluating a wide range of different finite element basis
-functions for numerical partial differential equations.</p>
+                    <p>As the result of my work during summer, it is now possible to solve PDEs on quadrilateral and hexahedral mesh.
+Assembly of finite element forms works for <code>CG</code> finite element space.
+From the user side all that is needed to do is just changing the mesh to one consisting of quadrilaterals instead of triangles or hexahedrons instead of tetrahedrons.</p>
 
-<p>FIAT uses a object-oriented infrastructure to define
-finite elements.  For example, the <code>Lagrange</code> module contains a class
-<code>Lagrange</code> modeling the Lagrange finite element family.  This
-class is a subclass of some <code>FiniteElement</code> class contained in
-another module.</p>
+<p>Unit square domain and unit cube domain can be created as following:</p>
 
-<p>FIAT has <code>TensorProductElement</code> class to define products of other elements.
-Lagrangian finite element defined on a quadrilateral cell is a tensor product of two Lagrange elements defined on intervals.</p>
+<pre><code>quadrilateral_mesh = UnitQuadMesh.create(n, m)
 
-<pre><code>from FIAT.tensor_product import TensorProductElement
-from FIAT.lagrange import Lagrange
-from FIAT.reference_element import UFCInterval as interval
-quadrilateral_element = TensorProductElement(Lagrange(interval()), Lagrange(interval()))
+hexahedral_mesh = UnitHexMesh.create(n, m , k)
 </code></pre>
 
-<p>However, as discussed in the previous post this element has tuple structure for dimensions as it is defined on a <code>TensorProductCell</code>
-Therefore it needs to be changed so that it is defined on new <code>UFCHexahedron</code> and <code>UFCQuadrilateral</code>.</p>
+<p><a href="https://en.wikipedia.org/wiki/Cahn%E2%80%93Hilliard_equation">Cahn–Hilliard equation</a> solved on a quadrilateral mesh:</p>
 
-<p>Newly implemented wrapper class <code>FlattenedDimensions</code> does that.</p>
+<p><img src="https://drive.google.com/uc?export=view&amp;id=0B7_NVEEiR5wUV00tSXhVTWVXeGs" alt="image should be here" title="Cahn–Hilliard equation gif" /></p>
 
-<pre><code>from FIAT.tensor_product import TensorProductElement, FlattenedDimensions
-from FIAT.lagrange import Lagrange
-from FIAT.reference_element import UFCInterval as interval
-quadrilateral_element = FlattenedDimensions(TensorProductElement(Lagrange(interval()), Lagrange(interval())))
-</code></pre>
+<p><a href="http://fenics.readthedocs.io/projects/dolfin/en/latest/demos/hyperelasticity/python/demo_hyperelasticity.py.html">Hyperelasticity problem</a> solved on a hexahedral mesh:
+<img src="https://drive.google.com/uc?export=view&amp;id=0B7_NVEEiR5wUakhCTGhkSENiOEk" alt="image should be here" title="Twisted cube" /></p>
 
-<p>Now <code>quadrilateral_element</code> is defined on UFCQuadrilateral and can be easily used by FFC to generate C++ code for assembling matrices.</p>
+<p>Lid driven cavity Stokes flow solved on a quadrilateral mesh:
+<img src="https://drive.google.com/uc?export=view&amp;id=0B7_NVEEiR5wUQ3psTHdEeC1xVWs" alt="image should be here" title="Cavity flow streamlines" /></p>
+
+<p>And <a href="http://fenics.readthedocs.io/projects/dolfin/en/latest/demos/poisson/python/demo_poisson.py.html">Poisson&rsquo;s equation</a> solved on a quad mesh:
+<img src="https://drive.google.com/uc?export=view&amp;id=0B7_NVEEiR5wUSUlqSXY0NkJjV0k" alt="image should be here" title="Poisson solution" /></p>
 
                 </section>
             </article>

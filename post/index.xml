@@ -6,8 +6,40 @@
     <description>Recent content in Posts on Ivan Yashchuk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 07 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 17 Aug 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://ivanyashchuk.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>New old demos</title>
+      <link>https://ivanyashchuk.github.io/post/some-demos/</link>
+      <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ivanyashchuk.github.io/post/some-demos/</guid>
+      <description>&lt;p&gt;As the result of my work during summer, it is now possible to solve PDEs on quadrilateral and hexahedral mesh.
+Assembly of finite element forms works for &lt;code&gt;CG&lt;/code&gt; finite element space.
+From the user side all that is needed to do is just changing the mesh to one consisting of quadrilaterals instead of triangles or hexahedrons instead of tetrahedrons.&lt;/p&gt;
+
+&lt;p&gt;Unit square domain and unit cube domain can be created as following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;quadrilateral_mesh = UnitQuadMesh.create(n, m)
+
+hexahedral_mesh = UnitHexMesh.create(n, m , k)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Cahn%E2%80%93Hilliard_equation&#34;&gt;Cahn–Hilliard equation&lt;/a&gt; solved on a quadrilateral mesh:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://drive.google.com/uc?export=view&amp;amp;id=0B7_NVEEiR5wUV00tSXhVTWVXeGs&#34; alt=&#34;image should be here&#34; title=&#34;Cahn–Hilliard equation gif&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://fenics.readthedocs.io/projects/dolfin/en/latest/demos/hyperelasticity/python/demo_hyperelasticity.py.html&#34;&gt;Hyperelasticity problem&lt;/a&gt; solved on a hexahedral mesh:
+&lt;img src=&#34;https://drive.google.com/uc?export=view&amp;amp;id=0B7_NVEEiR5wUakhCTGhkSENiOEk&#34; alt=&#34;image should be here&#34; title=&#34;Twisted cube&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Lid driven cavity Stokes flow solved on a quadrilateral mesh:
+&lt;img src=&#34;https://drive.google.com/uc?export=view&amp;amp;id=0B7_NVEEiR5wUQ3psTHdEeC1xVWs&#34; alt=&#34;image should be here&#34; title=&#34;Cavity flow streamlines&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And &lt;a href=&#34;http://fenics.readthedocs.io/projects/dolfin/en/latest/demos/poisson/python/demo_poisson.py.html&#34;&gt;Poisson&amp;rsquo;s equation&lt;/a&gt; solved on a quad mesh:
+&lt;img src=&#34;https://drive.google.com/uc?export=view&amp;amp;id=0B7_NVEEiR5wUSUlqSXY0NkJjV0k&#34; alt=&#34;image should be here&#34; title=&#34;Poisson solution&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Weak scaling</title>
@@ -82,13 +114,11 @@ Therefore it needs to be changed so that it is defined on new &lt;code&gt;UFCHex
 
 &lt;p&gt;Newly implemented wrapper class &lt;code&gt;FlattenedDimensions&lt;/code&gt; does that.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;from FIAT.tensor_product import TensorProductElement, FlattenedDimensions
+&lt;pre&gt;&lt;code&gt;from FIAT.tensor_product import TensorProductElement, FlattenedDimensions
 from FIAT.lagrange import Lagrange
 from FIAT.reference_element import UFCInterval as interval
 quadrilateral_element = FlattenedDimensions(TensorProductElement(Lagrange(interval()), Lagrange(interval())))
-```&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Now &lt;code&gt;quadrilateral_element&lt;/code&gt; is defined on UFCQuadrilateral and can be easily used by FFC to generate C++ code for assembling matrices.&lt;/p&gt;
 </description>
