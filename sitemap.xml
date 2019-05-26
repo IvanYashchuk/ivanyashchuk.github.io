@@ -1,90 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ivanyashchuk.github.io/post/some-demos/</loc>
-    <lastmod>2017-08-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ivanyashchuk.github.io/post/weak-scaling/</loc>
-    <lastmod>2017-08-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ivanyashchuk.github.io/post/second-evaluation/</loc>
-    <lastmod>2017-07-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ivanyashchuk.github.io/post/meet-new-class-for-FIAT/</loc>
-    <lastmod>2017-07-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ivanyashchuk.github.io/post/numbering-of-mesh-entities/</loc>
-    <lastmod>2017-07-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ivanyashchuk.github.io/post/first-evaluation/</loc>
-    <lastmod>2017-07-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ivanyashchuk.github.io/post/dirichlet-bc/</loc>
-    <lastmod>2017-06-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ivanyashchuk.github.io/post/fenics-conference/</loc>
-    <lastmod>2017-06-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ivanyashchuk.github.io/post/project-description/</loc>
-    <lastmod>2017-06-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ivanyashchuk.github.io/post/coding-period-started/</loc>
-    <lastmod>2017-06-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ivanyashchuk.github.io/about/</loc>
-    <lastmod>2017-06-01T14:02:37+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ivanyashchuk.github.io/post/second-meeting/</loc>
-    <lastmod>2017-05-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ivanyashchuk.github.io/post/first-meeting/</loc>
-    <lastmod>2017-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ivanyashchuk.github.io/post/welcome-to-gsoc/</loc>
-    <lastmod>2017-05-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ivanyashchuk.github.io/tags/</loc>
-    <lastmod>2015-06-20T14:02:37+02:00</lastmod>
+    <loc>https://ivanyashchuk.github.io/post/gsoc-start/</loc>
+    <lastmod>2019-05-26T20:13:42+03:00</lastmod>
   </url>
   
   <url>
     <loc>https://ivanyashchuk.github.io/</loc>
-    <lastmod>2017-08-17T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-26T20:13:42+03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ivanyashchuk.github.io/post/</loc>
-    <lastmod>2017-08-17T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-26T20:13:42+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivanyashchuk.github.io/page/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ivanyashchuk.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivanyashchuk.github.io/page/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ivanyashchuk.github.io/tags/</loc>
     <priority>0</priority>
   </url>
   
