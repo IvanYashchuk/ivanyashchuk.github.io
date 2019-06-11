@@ -8,17 +8,28 @@
     <language>en-us</language>
     <managingEditor>ivan.yashchuk@aalto.fi (Ivan Yashchuk)</managingEditor>
     <webMaster>ivan.yashchuk@aalto.fi (Ivan Yashchuk)</webMaster>
-    <lastBuildDate>Sun, 26 May 2019 20:13:42 +0300</lastBuildDate>
+    <lastBuildDate>Tue, 11 Jun 2019 21:15:04 +0300</lastBuildDate>
     
 	<atom:link href="https://ivanyashchuk.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>GSoC ChainerX: First Two Weeks</title>
+      <link>https://ivanyashchuk.github.io/post/gsoc19-first-two-weeks/</link>
+      <pubDate>Tue, 11 Jun 2019 21:15:04 +0300</pubDate>
+      <author>ivan.yashchuk@aalto.fi (Ivan Yashchuk)</author>
+      <guid>https://ivanyashchuk.github.io/post/gsoc19-first-two-weeks/</guid>
+      <description>Already two weeks of coding have gone past!
+My progress can be tracked in this issue. Part of the project is making LAPACK routines accesible from ChainerX performing computations in CPU and GPU. Another part is making them differentiable.
+LAPACK (Linear Algebra Package) is a standard software library for numerical linear algebra. It provides routines for solving systems of linear equations and linear least squares, eigenvalue problems, and singular value decomposition.</description>
+    </item>
+    
+    <item>
       <title>GSoC ChainerX: Linear Algebra</title>
-      <link>https://ivanyashchuk.github.io/post/gsoc-start/</link>
+      <link>https://ivanyashchuk.github.io/post/gsoc19-start/</link>
       <pubDate>Sun, 26 May 2019 20:13:42 +0300</pubDate>
       <author>ivan.yashchuk@aalto.fi (Ivan Yashchuk)</author>
-      <guid>https://ivanyashchuk.github.io/post/gsoc-start/</guid>
+      <guid>https://ivanyashchuk.github.io/post/gsoc19-start/</guid>
       <description>Coding period start soon!
 This summer I am going to work on extending ChainerX with some Linear Algebra routines. The goal is to implement common routines that are described at numpy.linalg. And their sensitivities for reverse mode automatic differentiation has to implemented as well!</description>
     </item>
