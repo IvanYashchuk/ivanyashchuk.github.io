@@ -8,10 +8,20 @@
     <language>en-us</language>
     <managingEditor>ivan.yashchuk@aalto.fi (Ivan Yashchuk)</managingEditor>
     <webMaster>ivan.yashchuk@aalto.fi (Ivan Yashchuk)</webMaster>
-    <lastBuildDate>Wed, 19 Jun 2019 06:23:50 +0300</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jul 2019 23:26:32 +0300</lastBuildDate>
     
 	<atom:link href="https://ivanyashchuk.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GSoC ChainerX: six weeks progress</title>
+      <link>https://ivanyashchuk.github.io/post/gsoc19-six-weeks/</link>
+      <pubDate>Sat, 06 Jul 2019 23:26:32 +0300</pubDate>
+      <author>ivan.yashchuk@aalto.fi (Ivan Yashchuk)</author>
+      <guid>https://ivanyashchuk.github.io/post/gsoc19-six-weeks/</guid>
+      <description>Me and my mentor Vincent have a face-to-face meeting every Wednesday over videochat. Last week our weekly meeting was in person. I&amp;rsquo;ve visited Preferred Networks office (that&amp;rsquo;s the company behind Chainer) and met a few developers there and we had lunch together. They even have a little space with Tatami (japanese mat) in the common area! Unfortunately, I forgot to take pictures.
+For the past days I was mostly focused on polishing existing PRs according to the code review.</description>
+    </item>
     
     <item>
       <title>GSoC ChainerX: CPU bindings</title>
