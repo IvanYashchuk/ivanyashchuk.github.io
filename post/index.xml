@@ -15,11 +15,11 @@
     
     <item>
       <title>GSoC ChainerX: CPU bindings</title>
-      <link>https://ivanyashchuk.github.io/post/gsoc19-first-evaluation/</link>
+      <link>https://ivanyashchuk.github.io/post/gsoc19-cpu-bindings/</link>
       <pubDate>Wed, 19 Jun 2019 06:23:50 +0300</pubDate>
       <author>ivan.yashchuk@aalto.fi (Ivan Yashchuk)</author>
-      <guid>https://ivanyashchuk.github.io/post/gsoc19-first-evaluation/</guid>
-      <description>Linear algebra routines from this issue are now working both on CPU and GPU. When it comes to the choice of linear algebra library on CPU, the variety is much broader than on GPU. However, we don&amp;rsquo;t need full featured linear algebra matrix library like Eigen, or Armadillo, as ChainerX has its own ndarray. Therefore, it was decided to use one of the LAPACK implementations. For now it seems that working with LAPACK (which is written in Fortran) directly without C wrappers is the way to go.</description>
+      <guid>https://ivanyashchuk.github.io/post/gsoc19-cpu-bindings/</guid>
+      <description>Linear algebra routines from this issue are now working both on CPU and GPU. When it comes to the choice of linear algebra library on CPU, the variety is much broader than on GPU. However, we don&amp;rsquo;t need a full featured linear algebra matrix library like Eigen, or Armadillo, as ChainerX has its own ndarray. Therefore, it was decided to use one of the LAPACK implementations. For now it seems that working with LAPACK (which is written in Fortran) directly without C wrappers is the way to go.</description>
     </item>
     
     <item>
