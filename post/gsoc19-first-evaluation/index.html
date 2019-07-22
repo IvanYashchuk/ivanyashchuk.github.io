@@ -7,17 +7,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>GSoC ChainerX: First Two Weeks - Ivan Yashchuk</title>
-  <meta property="og:title" content="GSoC ChainerX: First Two Weeks" />
-  <meta name="twitter:title" content="GSoC ChainerX: First Two Weeks" />
-  <meta name="description" content="Already two weeks of coding have gone past!
-My progress can be tracked in this issue. Part of the project is making LAPACK routines accesible from ChainerX performing computations in CPU and GPU. Another part is making them differentiable.
-LAPACK (Linear Algebra Package) is a standard software library for numerical linear algebra. It provides routines for solving systems of linear equations and linear least squares, eigenvalue problems, and singular value decomposition.">
-  <meta property="og:description" content="Already two weeks of coding have gone past!
-My progress can be tracked in this issue. Part of the project is making LAPACK routines accesible from ChainerX performing computations in CPU and GPU. Another part is making them differentiable.
-LAPACK (Linear Algebra Package) is a standard software library for numerical linear algebra. It provides routines for solving systems of linear equations and linear least squares, eigenvalue problems, and singular value decomposition.">
-  <meta name="twitter:description" content="Already two weeks of coding have gone past!
-My progress can be tracked in this issue. Part of the project is making LAPACK routines accesible from ChainerX performing computations in CPU and GPU. …">
+  <title>GSoC ChainerX: CPU bindings - Ivan Yashchuk</title>
+  <meta property="og:title" content="GSoC ChainerX: CPU bindings" />
+  <meta name="twitter:title" content="GSoC ChainerX: CPU bindings" />
+  <meta name="description" content="Linear algebra routines from this issue are now working both on CPU and GPU. When it comes to the choice of linear algebra library on CPU, the variety is much broader than on GPU. However, we don&rsquo;t need full featured linear algebra matrix library like Eigen, or Armadillo, as ChainerX has its own ndarray. Therefore, it was decided to use one of the LAPACK implementations. For now it seems that working with LAPACK (which is written in Fortran) directly without C wrappers is the way to go.">
+  <meta property="og:description" content="Linear algebra routines from this issue are now working both on CPU and GPU. When it comes to the choice of linear algebra library on CPU, the variety is much broader than on GPU. However, we don&rsquo;t need full featured linear algebra matrix library like Eigen, or Armadillo, as ChainerX has its own ndarray. Therefore, it was decided to use one of the LAPACK implementations. For now it seems that working with LAPACK (which is written in Fortran) directly without C wrappers is the way to go.">
+  <meta name="twitter:description" content="Linear algebra routines from this issue are now working both on CPU and GPU. When it comes to the choice of linear algebra library on CPU, the variety is much broader than on GPU. However, we …">
   <meta name="author" content="Ivan Yashchuk"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -53,8 +48,8 @@ My progress can be tracked in this issue. Part of the project is making LAPACK r
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/ivanyashchuk.github.io\/post\/gsoc19-first-two-weeks\/",
-          "name": "G so c chainer x first two weeks"
+          "@id": "https:\/\/ivanyashchuk.github.io\/post\/gsoc19-first-evaluation\/",
+          "name": "G so c chainer x c p u bindings"
         }
     }]
 }
@@ -65,15 +60,15 @@ My progress can be tracked in this issue. Part of the project is making LAPACK r
   "author": {
     "name" : "Ivan Yashchuk"
   },
-  "headline": "GSoC ChainerX: First Two Weeks",
-  "description" : "Already two weeks of coding have gone past!\nMy progress can be tracked in this issue. Part of the project is making LAPACK routines accesible from ChainerX performing computations in CPU and GPU. Another part is making them differentiable.\nLAPACK (Linear Algebra Package) is a standard software library for numerical linear algebra. It provides routines for solving systems of linear equations and linear least squares, eigenvalue problems, and singular value decomposition.",
+  "headline": "GSoC ChainerX: CPU bindings",
+  "description" : "Linear algebra routines from this issue are now working both on CPU and GPU. When it comes to the choice of linear algebra library on CPU, the variety is much broader than on GPU. However, we don\x26rsquo;t need full featured linear algebra matrix library like Eigen, or Armadillo, as ChainerX has its own ndarray. Therefore, it was decided to use one of the LAPACK implementations. For now it seems that working with LAPACK (which is written in Fortran) directly without C wrappers is the way to go.",
   "inLanguage" : "en",
-  "wordCount":  276 ,
-  "datePublished" : "2019-06-11T21:15:04",
-  "dateModified" : "2019-06-11T21:15:04",
+  "wordCount":  264 ,
+  "datePublished" : "2019-06-19T06:23:50",
+  "dateModified" : "2019-06-19T06:23:50",
   "image" : "https:\/\/ivanyashchuk.github.io\/img\/avatar.png",
   "keywords" : [ "" ],
-  "mainEntityOfPage" : "https:\/\/ivanyashchuk.github.io\/post\/gsoc19-first-two-weeks\/",
+  "mainEntityOfPage" : "https:\/\/ivanyashchuk.github.io\/post\/gsoc19-first-evaluation\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/ivanyashchuk.github.io\/",
@@ -87,25 +82,22 @@ My progress can be tracked in this issue. Part of the project is making LAPACK r
 }
 </script>
 
-<meta property="og:title" content="GSoC ChainerX: First Two Weeks" />
-<meta property="og:description" content="Already two weeks of coding have gone past!
-My progress can be tracked in this issue. Part of the project is making LAPACK routines accesible from ChainerX performing computations in CPU and GPU. Another part is making them differentiable.
-LAPACK (Linear Algebra Package) is a standard software library for numerical linear algebra. It provides routines for solving systems of linear equations and linear least squares, eigenvalue problems, and singular value decomposition.">
+<meta property="og:title" content="GSoC ChainerX: CPU bindings" />
+<meta property="og:description" content="Linear algebra routines from this issue are now working both on CPU and GPU. When it comes to the choice of linear algebra library on CPU, the variety is much broader than on GPU. However, we don&rsquo;t need full featured linear algebra matrix library like Eigen, or Armadillo, as ChainerX has its own ndarray. Therefore, it was decided to use one of the LAPACK implementations. For now it seems that working with LAPACK (which is written in Fortran) directly without C wrappers is the way to go.">
 <meta property="og:image" content="https://ivanyashchuk.github.io/img/avatar.png" />
-<meta property="og:url" content="https://ivanyashchuk.github.io/post/gsoc19-first-two-weeks/" />
+<meta property="og:url" content="https://ivanyashchuk.github.io/post/gsoc19-first-evaluation/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Ivan Yashchuk" />
 
-  <meta name="twitter:title" content="GSoC ChainerX: First Two Weeks" />
-  <meta name="twitter:description" content="Already two weeks of coding have gone past!
-My progress can be tracked in this issue. Part of the project is making LAPACK routines accesible from ChainerX performing computations in CPU and GPU. …">
+  <meta name="twitter:title" content="GSoC ChainerX: CPU bindings" />
+  <meta name="twitter:description" content="Linear algebra routines from this issue are now working both on CPU and GPU. When it comes to the choice of linear algebra library on CPU, the variety is much broader than on GPU. However, we …">
   <meta name="twitter:image" content="https://ivanyashchuk.github.io/img/avatar.png" />
   <meta name="twitter:card" content="summary" />
   <link href='https://ivanyashchuk.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://ivanyashchuk.github.io/img/avatar.png" />
   <meta name="twitter:image" content="https://ivanyashchuk.github.io/img/avatar.png" />
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://ivanyashchuk.github.io/post/gsoc19-first-two-weeks/" />
+  <meta property="og:url" content="https://ivanyashchuk.github.io/post/gsoc19-first-evaluation/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Ivan Yashchuk" />
 
@@ -277,7 +269,7 @@ if (!doNotTrack) {
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>GSoC ChainerX: First Two Weeks</h1>
+                <h1>GSoC ChainerX: CPU bindings</h1>
               
               
               
@@ -285,13 +277,13 @@ if (!doNotTrack) {
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on June 11, 2019
+  <i class="fas fa-calendar"></i>&nbsp;Posted on June 19, 2019
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;276&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;264&nbsp;words
   
   
     &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Ivan Yashchuk
@@ -314,25 +306,45 @@ if (!doNotTrack) {
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>Already two weeks of coding have gone past!</p>
+        <p>Linear algebra routines from <a href="https://github.com/chainer/chainer/issues/6764">this issue</a> are now working both on CPU and GPU.
+When it comes to the choice of linear algebra library on CPU, the variety is much broader than on GPU.
+However, we don&rsquo;t need full featured linear algebra matrix library like <a href="https://eigen.tuxfamily.org/dox/">Eigen</a>,
+or <a href="http://arma.sourceforge.net/">Armadillo</a>, as ChainerX has its own <code>ndarray</code>.
+Therefore, it was decided to use one of the LAPACK implementations.
+For now it seems that working with LAPACK (which is written in Fortran) directly without C wrappers is the way to go.
+There is a C interface to LAPACK called LAPACKE.
+Unline CBLAS (C interface to BLAS, which is already used in ChainerX), LAPACKE seems not to offer any advantages of using it (<a href="https://www.icl.utk.edu/files/publications/2017/icl-utk-1031-2017.pdf">pages 7-8</a>).</p>
 
-<p>My progress can be tracked in <a href="https://github.com/chainer/chainer/issues/6764">this issue</a>. Part of the project is making LAPACK routines accesible from ChainerX
-performing computations in CPU and GPU. Another part is making them differentiable.</p>
+<p>We can access the LAPACK <code>dpotrf</code> (double precision Cholesky decomposition) subroutine &hellip;</p>
 
-<p>LAPACK (Linear Algebra Package) is a standard software library for numerical linear algebra. It provides routines for solving systems of linear equations and linear least squares, eigenvalue problems, and singular value decomposition. It also includes routines to implement the associated matrix factorizations such as LU, QR, Cholesky and Schur decomposition. <a href="https://en.wikipedia.org/wiki/LAPACK">[wiki]</a></p>
+<pre><code>
+subroutine dpotrf(character UPLO,
+integer N,
+double precision, dimension( lda, * ) A,
+integer LDA,
+integer INFO
+)
+</code></pre>
 
-<p>It was decided to make first everything work with GPU using CUDA and then move to CPU side of things. In CUDA world there are two alternatives to LAPACK routines implementations: <a href="https://docs.nvidia.com/cuda/cusolver/index.html">cuSOLVER</a> and <a href="https://icl.cs.utk.edu/magma/">Magma</a>. It is worth to mention that there exist also alternative based on OpenCL named <a href="http://viennacl.sourceforge.net/">ViennaCL</a>.
-The choice in this project fell on cuSOLVER since it is available with CUDA Toolkit and does not require additional installation.</p>
+<p>&hellip; as the external C function <code>dpotrf_</code></p>
 
-<p><a href="https://github.com/chainer/chainer/pull/7329">The first implemented routine is Cholesky decomposition.</a> It is a decomposition of a (Hermitian) positive-definite matrix into the product of a lower triangular matrix and its (conjugate) transpose
-$$ A = L L^* $$
-It is based on <a href="https://docs.nvidia.com/cuda/cusolver/index.html#cuds-lt-t-gt-potrf">potrf</a>. The application include but not limited to solving linear systems, gaussian processes, kalman filtering.</p>
+<pre><code>extern &quot;C&quot; void dpotrf_(char* uplo, int* n, double* a, int* lda, int* info);
+</code></pre>
 
-<p><a href="https://github.com/chainer/chainer/pull/7379">Then QR decomposition was implemented.</a> It is a decomposition of a matrix $A$ into a product $$A = Q R$$ of an orthogonal matrix \( Q \) and an upper triangular matrix \( R \). The implementation is based on <a href="https://docs.nvidia.com/cuda/cusolver/#cuds-lt-t-gt-geqrf">geqrf and ormqr routines</a>.</p>
+<p>and any other LAPACK routine is made accessible within C++ in the same way.</p>
 
-<p><a href="https://github.com/chainer/chainer/pull/7411">SVD and pseudo-inverse</a> are implemented with <a href="http://docs.nvidia.com/cuda/cusolver/index.html#cuds-lt-t-gt-gesvd">gesvd routine</a>.</p>
+<p>Travis CI environment was easily adapted to support LAPACK routines unit tests with one additional step in <code>chainer/scripts/ci/travis/steps.sh</code></p>
 
-<p>Lastly, <a href="https://github.com/chainer/chainer/pull/7474">solve and inverse</a> functions were implemented using LU decomposition <a href="https://docs.nvidia.com/cuda/cusolver/index.html#cuds-lt-t-gt-getrf">getrf</a>.</p>
+<pre><code>step_before_install_chainerx_test_deps() {
+    if [[ $TRAVIS_OS_NAME = &quot;linux&quot; ]]; then
+        sudo apt-get install -y libblas-dev liblapack-dev
+    fi
+}
+</code></pre>
+
+<p>LAPACK needs to be installed only for Linux, OSX has LAPACK available natively with Accelerate framework. Currently Windows is not tested.</p>
+
+<p>Now I&rsquo;m flying to Tokyo and will meet my mentor in person. I&rsquo;m going to spend next three weeks in Japan mixing sightseeing with coding.</p>
 
 
         
@@ -349,13 +361,9 @@ It is based on <a href="https://docs.nvidia.com/cuda/cusolver/index.html#cuds-lt
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://ivanyashchuk.github.io/post/gsoc19-start/" data-toggle="tooltip" data-placement="top" title="GSoC ChainerX: Linear Algebra">&larr; Previous Post</a>
+              <a href="https://ivanyashchuk.github.io/post/gsoc19-first-two-weeks/" data-toggle="tooltip" data-placement="top" title="GSoC ChainerX: First Two Weeks">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="https://ivanyashchuk.github.io/post/gsoc19-first-evaluation/" data-toggle="tooltip" data-placement="top" title="GSoC ChainerX: CPU bindings">Next Post &rarr;</a>
-            </li>
           
         </ul>
       
