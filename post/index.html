@@ -224,7 +224,7 @@ if (!doNotTrack) {
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on July 6, 2019
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 25, 2019
   
   
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;0&nbsp;minutes
@@ -254,6 +254,123 @@ if (!doNotTrack) {
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
         
         <div class="posts-list">
+          
+            <article class="post-preview">
+              <a href="https://ivanyashchuk.github.io/post/gsoc19-final/">
+                <h2 class="post-title">GSoC ChainerX: Final</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 25, 2019
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;121&nbsp;words
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Ivan Yashchuk
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  The Summer of Code is coming to an end. 26th of August is the deadline for participants to submit their final report. The summary of the project, including all submitted PRs, is available (here)[https://gist.github.com/IvanYashchuk/5655fec951a1b3749a9b6fa57246842c].
+As a result of this GSoC project, cholesky, qr, solve, inv, svd, pinv, eigh, eigvalsh functions were implemented for ChainerX. All of them (except eigvalsh) were made differentiable. Most of the changes are in master branch already and available both using C++ API and in chainerx.
+                  <a href="https://ivanyashchuk.github.io/post/gsoc19-final/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="https://ivanyashchuk.github.io/post/gsoc19-performance/">
+                <h2 class="post-title">GSoC ChainerX: Performance of new routines</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 2, 2019
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;93&nbsp;words
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Ivan Yashchuk
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  I have run some performance tests to compare ChainerX implementation against NumPy and CuPy. Some new chainerx.linalg routines run more slowly compared to numpy.linalg and cupy.linalg. Performance results &amp; code to obtain them is available in this gist.
+The most probable reason for slowness of qr, solve, inv is allocating temporary arrays in the kernel and copying data from them to routine level arrays. Also repeated transpose-copy operations (because of ChainerX&rsquo;s row-major vs column-major ordering of LAPACK/cuSOLVER) have an effect.
+                  <a href="https://ivanyashchuk.github.io/post/gsoc19-performance/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
+          
+            <article class="post-preview">
+              <a href="https://ivanyashchuk.github.io/post/gsoc19-second-evaluation/">
+                <h2 class="post-title">GSoC ChainerX: Second evaluation</h2>
+
+                
+              </a>
+
+              <p class="post-meta">
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on July 22, 2019
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;87&nbsp;words
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Ivan Yashchuk
+  
+  
+</span>
+
+
+              </p>
+              <div class="post-entry">
+                
+                  It&rsquo;s time for the second evaluation and so far everything goes very smoothly. New linear algebra routines are becoming to be merged and others are soon to be in this stage. Pull request that adds Solve &amp; Inverse (#7474) functions has been merged! (SVD)[https://github.com/chainer/chainer/pull/7411], (QR)[https://github.com/chainer/chainer/pull/7379] PRs are ready for review!
+TODOs after existing PRs: - Tutorial (and docs) - Support mixed/other dtypes such as fp16 - Possibly cover more routines under numpy.
+                  <a href="https://ivanyashchuk.github.io/post/gsoc19-second-evaluation/" class="post-read-more">[Read More]</a>
+                
+              </div>
+
+              
+
+            </article>
           
             <article class="post-preview">
               <a href="https://ivanyashchuk.github.io/post/gsoc19-six-weeks/">
