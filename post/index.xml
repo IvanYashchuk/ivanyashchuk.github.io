@@ -40,7 +40,8 @@ The most probable reason for slowness of qr, solve, inv is allocating temporary 
       <author>ivan.yashchuk@aalto.fi (Ivan Yashchuk)</author>
       <guid>https://ivanyashchuk.github.io/post/gsoc19-second-evaluation/</guid>
       <description>It&amp;rsquo;s time for the second evaluation and so far everything goes very smoothly. New linear algebra routines are becoming to be merged and others are soon to be in this stage. Pull request that adds Solve &amp;amp; Inverse (#7474) functions has been merged! SVD, QR PRs are ready for review!
-TODOs after existing PRs: * Tutorial (and docs) * Support mixed/other dtypes such as fp16 * Possibly cover more routines under numpy.</description>
+TODOs after existing PRs:
+ Tutorial (and docs) Support mixed/other dtypes such as fp16 Possibly cover more routines under numpy.linalg such as det Benchmark and summarize differences with other alternative implementations NumPy, CuPy, etc.</description>
     </item>
     
     <item>
