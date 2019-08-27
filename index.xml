@@ -19,7 +19,7 @@
       <pubDate>Sun, 25 Aug 2019 13:14:48 +0300</pubDate>
       <author>ivan.yashchuk@aalto.fi (Ivan Yashchuk)</author>
       <guid>https://ivanyashchuk.github.io/post/gsoc19-final/</guid>
-      <description>The Summer of Code is coming to an end. 26th of August is the deadline for participants to submit their final report. The summary of the project, including all submitted PRs, is available (here)[https://gist.github.com/IvanYashchuk/5655fec951a1b3749a9b6fa57246842c].
+      <description>The Summer of Code is coming to an end. 26th of August is the deadline for participants to submit their final report. The summary of the project, including all submitted PRs, is available here.
 As a result of this GSoC project, cholesky, qr, solve, inv, svd, pinv, eigh, eigvalsh functions were implemented for ChainerX. All of them (except eigvalsh) were made differentiable. Most of the changes are in master branch already and available both using C++ API and in chainerx.</description>
     </item>
     
@@ -39,8 +39,8 @@ The most probable reason for slowness of qr, solve, inv is allocating temporary 
       <pubDate>Mon, 22 Jul 2019 09:44:01 +0300</pubDate>
       <author>ivan.yashchuk@aalto.fi (Ivan Yashchuk)</author>
       <guid>https://ivanyashchuk.github.io/post/gsoc19-second-evaluation/</guid>
-      <description>It&amp;rsquo;s time for the second evaluation and so far everything goes very smoothly. New linear algebra routines are becoming to be merged and others are soon to be in this stage. Pull request that adds Solve &amp;amp; Inverse (#7474) functions has been merged! (SVD)[https://github.com/chainer/chainer/pull/7411], (QR)[https://github.com/chainer/chainer/pull/7379] PRs are ready for review!
-TODOs after existing PRs: - Tutorial (and docs) - Support mixed/other dtypes such as fp16 - Possibly cover more routines under numpy.</description>
+      <description>It&amp;rsquo;s time for the second evaluation and so far everything goes very smoothly. New linear algebra routines are becoming to be merged and others are soon to be in this stage. Pull request that adds Solve &amp;amp; Inverse (#7474) functions has been merged! SVD, QR PRs are ready for review!
+TODOs after existing PRs: * Tutorial (and docs) * Support mixed/other dtypes such as fp16 * Possibly cover more routines under numpy.</description>
     </item>
     
     <item>
